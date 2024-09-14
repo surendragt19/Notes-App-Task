@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.svg">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Matemasie&:ital,wght@0,300..800;1,300..800&display=swap">
+    <title>E Notes App</title>
+</head>
+<body>
+    <h1>E Notes App</h1>
+    <div class="scroller"></div>
+    <div class="container" id="mainContainer">
+        <form class="form" action="/add" method="POST" id="taskForm">
+            <input type="text" class="input" id="taskTitleInput" name="title" placeholder="Notes Title" required>
+            <textarea rows="3" class="input" id="taskContentInput" name="content" placeholder="Notes Content" required></textarea>
+            <input type="submit" class="add" id="addTaskButton" value="Add Notes">
+        </form>
+    </div>
+
+
+    <div class="container" id="mainContainer">
+    <div class="tasks" id="tasksContainer">
+        <% notes.forEach(note => { %>
+            <div class="task" id="<%= note.id %>">
+                <div class="task-title"><%= note.title %></div>
+                <div class="task-content"><%= note.content %></div>
+                <span class="complete">
+                    <form action="/delete/<%= note.id %>" method="POST" style="display:inline;">
+                        <button type="submit" style="background:none;border:none;color:white;text-decoration:none;cursor:pointer;">Delete</button>
+                    </form>
+                </span>
+                <span class="delete">
+                    <form action="/edit/<%= note.id %>" method="POST" style="display:inline;">
+                        <button type="submit" style="background:none;border:none;color:white;text-decoration:none;cursor:pointer;">Edit Note</button>
+                    </form>
+                </span>
+            </div>
+        <% }) %>
+    </div>
+    </div>
+</body>
+</html>

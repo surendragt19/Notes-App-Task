@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Matemasie&:ital,wght@0,300..800;1,300..800&display=swap">
+  <title>Edit Note</title>
+</head>
+<body>
+  <h1>Edit Your Notes</h1>
+  <div class="container" id="mainContainer">
+      <form class="form" action="/edit/<%= note.id %>" method="POST">
+        <input type="text" class="input" name="title" placeholder="Notes Title" value="<%= note.title %>" required>
+        <input type="text" class="input" name="content" placeholder="Notes Content" value="<%= note.content %>" required>
+        <input type="submit" class="add" value="Update Note">
+      </form>
+  </div>
+  <div class="container" id="mainContainer">
+  <a class="back" href="/" style="text-decoration: none;"> Back 🔙 to Notes</a>
+</div>
+</body>
+</html>
+``

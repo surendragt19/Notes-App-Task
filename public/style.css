@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: Helvetica, sans-serif;
+    padding-top: 60px;
+  }
+  
+  h1 {
+    text-align: center;
+    padding: 12px;
+    font-family: "Matemasie", sans-serif;
+    color: #ff4800;
+    border-bottom: 1px solid #cccccc50;
+    background-color: #eee;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 15;
+  }
+  
+  .scroller {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 0;
+    width: 10px;
+    background-color: #ff4800;
+    z-index: 9999;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+  
+
+  .container {
+    width: calc(100% - 400px);
+    margin: 60px auto;
+  }
+  
+  @media(max-width: 992px) {
+    .container {
+      width: calc(100% - 200px);
+    }
+  }
+  
+  @media(max-width: 767px) {
+    .container {
+      width: calc(100% - 50px);
+    }
+  }
+  
+
+  .form {
+    margin-top: 60px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    background-color: #eee;
+    border-radius: 6px;
+  }
+  
+  .input {
+    padding: 10px;
+    border: 2px solid #cccccc50;
+    border-radius: 6px;
+    outline: none;
+    width: 100%; 
+  }
+  
+  .add {
+    padding: 10px;
+    background-color: #ff4800;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid #ff4800;
+    border-radius: 6px;
+    width: 100%; 
+    text-align: center; 
+  }
+
+  .back {
+    padding: 4px;
+    font-size: small;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    border: 2px solid rgb(110, 70, 70);;
+    border-radius: 4px;
+  }
+
+
+  @media (max-width: 424px) {
+    .form {
+      width: 100%; 
+    }
+  
+    .input, .add {
+      width: 100%; 
+    }
+  }
+  
+  
+  .tasks {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 6px;
+    position: relative;
+  }
+  
+  .task {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 2px solid #cccccc50;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+  
+  
+  .task:hover {
+    background-color: #f7f7f7;
+  }
+  
+  .task-title {
+    font-weight: bold;
+  }
+  
+  .task-content {
+    margin-top: 5px;
+  }
+
+  span {
+    padding: 6px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 10px;
+    background-color: #ff4800;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 5px;
+  }
+  
+  
+  span.complete {
+    position: absolute;
+    right: 30px;
+  }
+  
+  span.delete {
+    position: absolute;
+    right: 100px;
+    background-color: rgb(102, 102, 215);
+  }
+  
